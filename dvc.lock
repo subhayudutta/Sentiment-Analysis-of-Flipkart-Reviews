@@ -1,0 +1,92 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/reviewAnalysis/pipeline/stage_01_data_ingestion.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e7499aa93cab2631d503da255da5257
+      size: 696
+    - path: src/reviewAnalysis/pipeline/stage_01_data_ingestion.py
+      hash: md5
+      md5: ea8cc5e96aa1f4208430431723ebfe8b
+      size: 915
+    outs:
+    - path: artifacts/data_ingestion/flipkart.csv
+      hash: md5
+      md5: bca4cce87b6cf8c4e3ed3c0f9fda7b68
+      size: 644271
+  data_validation:
+    cmd: python src/reviewAnalysis/pipeline/stage_02_data_validation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e7499aa93cab2631d503da255da5257
+      size: 696
+    - path: src/reviewAnalysis/pipeline/stage_02_data_validation.py
+      hash: md5
+      md5: 1bb49bf51ac418a0ed0b4d87dc400463
+      size: 898
+    outs:
+    - path: artifacts/data_validation/status.txt
+      hash: md5
+      md5: 86e6a2f694c57a675b3e2da6b95ff9ba
+      size: 23
+  data_transformation:
+    cmd: python src/reviewAnalysis/pipeline/stage_03_data_transformation.py
+    deps:
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e7499aa93cab2631d503da255da5257
+      size: 696
+    - path: src/reviewAnalysis/pipeline/stage_03_data_transformation.py
+      hash: md5
+      md5: 4e233213b671351d4bd5b4cfad3ca487
+      size: 937
+    outs:
+    - path: artifacts/data_transformation/main_df.csv
+      hash: md5
+      md5: ea68359aa486e4535282576ea19d08a7
+      size: 456151
+  model_trainer:
+    cmd: python src/reviewAnalysis/pipeline/stage_04_model_trainer.py
+    deps:
+    - path: artifacts/data_ingestion/flipkart.csv
+      hash: md5
+      md5: bca4cce87b6cf8c4e3ed3c0f9fda7b68
+      size: 644271
+    - path: artifacts/data_transformation
+      hash: md5
+      md5: e48a38f7d101ce3d477fa12db1248483.dir
+      size: 456151
+      nfiles: 1
+    - path: artifacts/data_validation
+      hash: md5
+      md5: 0ccb3ea5849272ff03be5ab71786b9ff.dir
+      size: 23
+      nfiles: 1
+    - path: config/config.yaml
+      hash: md5
+      md5: 7e7499aa93cab2631d503da255da5257
+      size: 696
+    - path: src/reviewAnalysis/pipeline/stage_04_model_trainer.py
+      hash: md5
+      md5: 8638fcfe11f458447e51b2c8d270f932
+      size: 869
+    params:
+      params.yaml:
+        TrainingArguments:
+          max_words: 50000
+          max_len: 300
+          batch_size: 128
+          epochs: 1
+          validation_split: 0.2
+    outs:
+    - path: artifacts/model_trainer/model.h5
+      hash: md5
+      md5: 48cf828930de0f4a25406259ed95409d
+      size: 40673776
+    - path: artifacts/model_trainer/tokenizer.pickle
+      hash: md5
+      md5: 7d76bc9ee6ab4cb5c4f5009404471f68
+      size: 165139

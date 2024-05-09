@@ -37,5 +37,6 @@ stages:
       - artifacts/model_trainer/tokenizer.pickle 
       - artifacts/model_trainer/model.h5
       - src/reviewAnalysis/models/model.h5
+      cache: false
 
         
