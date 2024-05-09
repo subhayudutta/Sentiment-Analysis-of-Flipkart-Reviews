@@ -1,32 +1,32 @@
 stages:
   data_ingestion:
-    cmd: python src/textClassification/pipeline/stage_01_data_ingestion.py
+    cmd: python src/reviewAnalysis/pipeline/stage_01_data_ingestion.py
     deps:
-      - src/textClassification/pipeline/stage_01_data_ingestion.py
+      - src/reviewAnalysis/pipeline/stage_01_data_ingestion.py
       - config/config.yaml
     outs:
       - artifacts/data_ingestion/flipkart.csv
 
   data_validation:
-    cmd: python src/textClassification/pipeline/stage_02_data_validation.py
+    cmd: python src/reviewAnalysis/pipeline/stage_02_data_validation.py
     deps:
-      - src/textClassification/pipeline/stage_02_data_validation.py
+      - src/reviewAnalysis/pipeline/stage_02_data_validation.py
       - config/config.yaml
     outs:
       - artifacts/data_validation/status.txt
 
   data_transformation:
-    cmd: python src/textClassification/pipeline/stage_03_data_transformation.py
+    cmd: python src/reviewAnalysis/pipeline/stage_03_data_transformation.py
     deps:
-      - src/textClassification/pipeline/stage_03_data_transformation.py
+      - src/reviewAnalysis/pipeline/stage_03_data_transformation.py
       - config/config.yaml
     outs:
       - artifacts/data_transformation/main_df.csv
 
   model_trainer:
-    cmd: python src/textClassification/pipeline/stage_04_model_trainer.py
+    cmd: python src/reviewAnalysis/pipeline/stage_04_model_trainer.py
     deps:
-      - src/textClassification/pipeline/stage_04_model_trainer.py
+      - src/reviewAnalysis/pipeline/stage_04_model_trainer.py
       - config/config.yaml
       - artifacts/data_ingestion/flipkart.csv
       - artifacts/data_validation

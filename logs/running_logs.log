@@ -278,3 +278,13 @@ x==========x]
 [2024-05-09 18:45:19,593: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
 
 x==========x]
+[2024-05-09 18:49:27,628: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-09 18:49:27,644: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 18:49:27,646: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 18:49:27,646: INFO: common: created directory at: artifacts]
+[2024-05-09 18:49:27,649: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-09 18:49:27,649: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 18:49:30,627: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 18:49:30,652: INFO: stage_01_data_ingestion: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
