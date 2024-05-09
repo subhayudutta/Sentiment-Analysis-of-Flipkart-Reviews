@@ -11,7 +11,8 @@ def index():
 @app.route("/train")
 def training():
     try:
-        subprocess.run(["python", "main.py"])
+        #subprocess.run(["python", "main.py"])
+        subprocess.run(["dvc", "repro"])
         return "Training successful !!"
     except Exception as e:
         return f"Error Occurred! {e}"

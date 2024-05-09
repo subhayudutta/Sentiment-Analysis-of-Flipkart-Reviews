@@ -398,3 +398,207 @@ x==========x]
 [2024-05-09 19:04:06,560: INFO: stage_04_model_trainer: >>>>>> stage Model Trainer stage completed <<<<<<
 
 x==========x]
+[2024-05-09 19:08:03,613: INFO: stage_04_model_trainer: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-09 19:08:03,621: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:08:03,625: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:08:03,627: INFO: common: created directory at: artifacts]
+[2024-05-09 19:08:03,627: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-09 19:08:15,384: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-09 19:08:15,462: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-09 19:08:15,524: INFO: stage_04_model_trainer: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:48:55,524: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-09 19:48:55,524: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:48:55,524: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:48:55,524: INFO: common: created directory at: artifacts]
+[2024-05-09 19:48:55,536: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-09 19:48:55,536: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:48:58,359: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:48:58,378: ERROR: main: [Errno 13] Permission denied: 'artifacts\\data_ingestion\\flipkart.csv']
+Traceback (most recent call last):
+  File "D:\ML projects\ML Pipeline Projects\Sentiment-Analysis-of-Flipkart-Reviews\main.py", line 13, in <module>
+    data_ingestion.main()
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.extract_zip_file()
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\components\data_ingestion.py", line 47, in extract_zip_file
+    zip_ref.extractall(unzip_path)
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\zipfile\__init__.py", line 1744, in extractall
+    self._extract_member(zipinfo, path, pwd)
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\zipfile\__init__.py", line 1801, in _extract_member
+    open(targetpath, "wb") as target:
+    ^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'artifacts\\data_ingestion\\flipkart.csv'
+[2024-05-09 19:50:52,042: INFO: stage_05_model_evaluation: *******************]
+[2024-05-09 19:50:52,042: INFO: stage_05_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-09 19:50:52,044: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:50:52,050: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:50:52,050: INFO: common: created directory at: artifacts]
+[2024-05-09 19:50:52,052: ERROR: stage_05_model_evaluation: [Errno 2] Unable to synchronously open file (unable to open file: name = 'artifacts/training/model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)]
+Traceback (most recent call last):
+  File "D:\ML projects\ML Pipeline Projects\Sentiment-Analysis-of-Flipkart-Reviews\src\reviewAnalysis\pipeline\stage_05_model_evaluation.py", line 27, in <module>
+    obj.main()
+  File "D:\ML projects\ML Pipeline Projects\Sentiment-Analysis-of-Flipkart-Reviews\src\reviewAnalysis\pipeline\stage_05_model_evaluation.py", line 18, in main
+    evaluation.evaluation()
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\components\model_evaluation.py", line 38, in evaluation
+    self.model = self.load_model(self.config.path_of_model)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\components\model_evaluation.py", line 35, in load_model
+    return tf.keras.models.load_model(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+FileNotFoundError: [Errno 2] Unable to synchronously open file (unable to open file: name = 'artifacts/training/model.h5', errno = 2, error message = 'No such file or directory', flags = 0, o_flags = 0)
+[2024-05-09 19:52:13,655: INFO: stage_05_model_evaluation: *******************]
+[2024-05-09 19:52:13,655: INFO: stage_05_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-09 19:52:13,657: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:52:13,662: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:52:13,664: INFO: common: created directory at: artifacts]
+[2024-05-09 19:52:13,665: ERROR: stage_05_model_evaluation: [Errno 22] Unable to synchronously open file (unable to open file: name = 'srceviewAnalysis\models\model.h5', errno = 22, error message = 'Invalid argument', flags = 0, o_flags = 0)]
+Traceback (most recent call last):
+  File "D:\ML projects\ML Pipeline Projects\Sentiment-Analysis-of-Flipkart-Reviews\src\reviewAnalysis\pipeline\stage_05_model_evaluation.py", line 27, in <module>
+    obj.main()
+  File "D:\ML projects\ML Pipeline Projects\Sentiment-Analysis-of-Flipkart-Reviews\src\reviewAnalysis\pipeline\stage_05_model_evaluation.py", line 18, in main
+    evaluation.evaluation()
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\components\model_evaluation.py", line 38, in evaluation
+    self.model = self.load_model(self.config.path_of_model)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\components\model_evaluation.py", line 35, in load_model
+    return tf.keras.models.load_model(path)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\keras\src\saving\saving_api.py", line 183, in load_model
+    return legacy_h5_format.load_model_from_hdf5(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\keras\src\legacy\saving\legacy_h5_format.py", line 116, in load_model_from_hdf5
+    f = h5py.File(filepath, mode="r")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\h5py\_hl\files.py", line 562, in __init__
+    fid = make_fid(name, mode, userblock_size, fapl, fcpl, swmr=swmr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\site-packages\h5py\_hl\files.py", line 235, in make_fid
+    fid = h5f.open(name, flags, fapl=fapl)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "h5py\\_objects.pyx", line 54, in h5py._objects.with_phil.wrapper
+  File "h5py\\_objects.pyx", line 55, in h5py._objects.with_phil.wrapper
+  File "h5py\\h5f.pyx", line 102, in h5py.h5f.open
+OSError: [Errno 22] Unable to synchronously open file (unable to open file: name = 'srceviewAnalysis\models\model.h5', errno = 22, error message = 'Invalid argument', flags = 0, o_flags = 0)
+[2024-05-09 19:52:40,793: INFO: stage_05_model_evaluation: *******************]
+[2024-05-09 19:52:40,793: INFO: stage_05_model_evaluation: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-09 19:52:40,798: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:52:40,801: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:52:40,802: INFO: common: created directory at: artifacts]
+[2024-05-09 19:52:41,014: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]
+[2024-05-09 19:54:16,947: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-09 19:54:16,949: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:54:16,954: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:54:16,955: INFO: common: created directory at: artifacts]
+[2024-05-09 19:54:16,955: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-09 19:54:16,958: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:54:20,280: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:54:20,306: ERROR: main: [Errno 13] Permission denied: 'artifacts\\data_ingestion\\flipkart.csv']
+Traceback (most recent call last):
+  File "D:\ML projects\ML Pipeline Projects\Sentiment-Analysis-of-Flipkart-Reviews\main.py", line 13, in <module>
+    data_ingestion.main()
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\pipeline\stage_01_data_ingestion.py", line 16, in main
+    data_ingestion.extract_zip_file()
+  File "d:\ml projects\ml pipeline projects\sentiment-analysis-of-flipkart-reviews\src\reviewAnalysis\components\data_ingestion.py", line 47, in extract_zip_file
+    zip_ref.extractall(unzip_path)
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\zipfile\__init__.py", line 1744, in extractall
+    self._extract_member(zipinfo, path, pwd)
+  File "C:\Users\subhayu\anaconda3\envs\review\Lib\zipfile\__init__.py", line 1801, in _extract_member
+    open(targetpath, "wb") as target:
+    ^^^^^^^^^^^^^^^^^^^^^^
+PermissionError: [Errno 13] Permission denied: 'artifacts\\data_ingestion\\flipkart.csv'
+[2024-05-09 19:56:18,553: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-09 19:56:18,560: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:56:18,564: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:56:18,565: INFO: common: created directory at: artifacts]
+[2024-05-09 19:56:18,565: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-09 19:56:18,568: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:56:21,242: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:56:21,271: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:56:21,271: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-09 19:56:21,276: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:56:21,279: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:56:21,279: INFO: common: created directory at: artifacts]
+[2024-05-09 19:56:21,284: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-09 19:56:21,285: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:56:21,285: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-05-09 19:56:21,289: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:56:21,289: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:56:21,289: INFO: common: created directory at: artifacts]
+[2024-05-09 19:56:21,298: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-09 19:56:21,373: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:56:21,374: INFO: main: *******************]
+[2024-05-09 19:56:21,374: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-09 19:56:21,376: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:56:21,381: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:56:21,381: INFO: common: created directory at: artifacts]
+[2024-05-09 19:56:21,384: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-09 19:56:35,318: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-09 19:56:35,426: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-09 19:56:35,496: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:57:15,715: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-09 19:57:15,718: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:57:15,723: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:57:15,724: INFO: common: created directory at: artifacts]
+[2024-05-09 19:57:15,724: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-09 19:57:15,726: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:57:18,501: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-09 19:57:18,543: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:57:18,543: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-09 19:57:18,549: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:57:18,553: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:57:18,553: INFO: common: created directory at: artifacts]
+[2024-05-09 19:57:18,553: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-09 19:57:18,553: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:57:18,559: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-05-09 19:57:18,562: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:57:18,567: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:57:18,569: INFO: common: created directory at: artifacts]
+[2024-05-09 19:57:18,569: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-09 19:57:18,652: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:57:18,653: INFO: main: *******************]
+[2024-05-09 19:57:18,653: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-09 19:57:18,653: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:57:18,661: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:57:18,663: INFO: common: created directory at: artifacts]
+[2024-05-09 19:57:18,663: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-09 19:57:32,573: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-09 19:57:32,660: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-09 19:57:32,741: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]
+[2024-05-09 19:57:32,741: INFO: main: *******************]
+[2024-05-09 19:57:32,741: INFO: main: >>>>>> stage Evaluation stage started <<<<<<]
+[2024-05-09 19:57:32,745: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-09 19:57:32,747: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-09 19:57:32,747: INFO: common: created directory at: artifacts]
+[2024-05-09 19:57:32,853: WARNING: saving_utils: Compiled the loaded model, but the compiled metrics have yet to be built. `model.compile_metrics` will be empty until you train or evaluate the model.]

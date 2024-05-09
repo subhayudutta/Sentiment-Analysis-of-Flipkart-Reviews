@@ -2,4 +2,3 @@
 # the performance. Learn more at
 # https://dvc.org/doc/user-guide/dvcignore
 
-dvc add --ignore-file custom_ignore_patterns.txt data

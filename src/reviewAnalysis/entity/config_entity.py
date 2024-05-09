@@ -35,3 +35,10 @@ class ModelTrainerConfig:
     batch_size: int
     epochs: int
     validation_split: float
+
+@dataclass(frozen=True)
+class EvaluationConfig:
+    path_of_model: Path
+    training_data: Path
+    all_params: dict
+    mlflow_uri: str

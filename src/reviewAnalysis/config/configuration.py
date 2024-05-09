@@ -7,6 +7,7 @@ from reviewAnalysis.entity.config_entity import (DataIngestionConfig,
                                                      DataValidationConfig,
                                                      DataTransformationConfig,
                                                      ModelTrainerConfig)
+from reviewAnalysis.entity.config_entity import EvaluationConfig
 
 
 
@@ -86,3 +87,13 @@ class ConfigurationManager:
         )
 
         return model_trainer_config
+    
+
+    def get_evaluation_config(self) -> EvaluationConfig:
+        eval_config = EvaluationConfig(
+            path_of_model="src/reviewAnalysis/models/model.h5",
+            training_data="artifacts/data_ingestion/flipkart.csv",
+            mlflow_uri="https://dagshub.com/subhayudutta/Chest-Cancer-Classification.mlflow",
+            all_params=self.params
+        )
+        return eval_config

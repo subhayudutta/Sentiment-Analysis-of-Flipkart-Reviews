@@ -84,9 +84,9 @@ stages:
     outs:
     - path: artifacts/model_trainer/model.h5
       hash: md5
-      md5: 48cf828930de0f4a25406259ed95409d
+      md5: 5374ffd6ea6c6839769b3cc6ca011a3a
       size: 40673776
     - path: artifacts/model_trainer/tokenizer.pickle
       hash: md5
-      md5: 7d76bc9ee6ab4cb5c4f5009404471f68
+      md5: bca1a95bb2c9661e619fdc300dcb09ac
       size: 165139
