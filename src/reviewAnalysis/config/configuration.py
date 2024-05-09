@@ -93,7 +93,7 @@ class ConfigurationManager:
         eval_config = EvaluationConfig(
             path_of_model="src/reviewAnalysis/models/model.h5",
             training_data="artifacts/data_ingestion/flipkart.csv",
-            mlflow_uri="https://dagshub.com/subhayudutta/Chest-Cancer-Classification.mlflow",
+            mlflow_uri="https://dagshub.com/subhayudutta/Sentiment-Analysis-of-Flipkart-Reviews.mlflow",
             all_params=self.params
         )
         return eval_config

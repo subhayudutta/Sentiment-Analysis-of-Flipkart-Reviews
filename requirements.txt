@@ -5,6 +5,10 @@ matplotlib
 seaborn
 nltk
 regex
+ipykernel
+notebook
+mlflow
+Flask
 scikit-learn
 from-root
 google-cloud-storage
