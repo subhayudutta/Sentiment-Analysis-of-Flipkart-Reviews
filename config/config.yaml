@@ -24,4 +24,5 @@ data_transformation:
 
 model_trainer:
   root_dir: artifacts/model_trainer
+  root2_dir: src/reviewAnalysis/models
   data_path: artifacts/data_transformation

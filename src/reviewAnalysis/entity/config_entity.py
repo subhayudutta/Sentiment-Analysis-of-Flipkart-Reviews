@@ -28,6 +28,7 @@ class DataTransformationConfig:
 @dataclass(frozen=True)
 class ModelTrainerConfig:
     root_dir: Path
+    root2_dir: Path
     data_path: Path
     max_words: int
     max_len: int

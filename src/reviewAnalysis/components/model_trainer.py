@@ -75,4 +75,5 @@ class ModelTrainer:
 
         # Save model
         model.save(os.path.join(self.config.root_dir, 'model.h5'))
+        model.save(os.path.join(self.config.root2_dir, 'model.h5'))
 

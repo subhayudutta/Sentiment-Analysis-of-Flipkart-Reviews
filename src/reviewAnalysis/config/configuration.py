@@ -75,6 +75,7 @@ class ConfigurationManager:
 
         model_trainer_config = ModelTrainerConfig(
             root_dir=config.root_dir,
+            root2_dir=config.root2_dir,
             data_path=config.data_path,
             max_words = params.max_words,
             max_len = params.max_len,
