@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👍FlipkartSent👍</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-12 col-lg-11 col-xl-10">
+                <div class="card d-flex mx-auto my-5">
+                    <div class="row">
+                        <div class="col-md-5 col-sm-12 col-xs-12 c1 p-5">
+                            <div class="row mb-1 m-3"> <img src="{{ url_for('static', filename='sd-removebg-preview.png') }}" width="70vw" height="70vh" alt=""> </div> 
+                            <img src="https://thumbs.dreamstime.com/b/watercolor-silhouette-man-surrounded-chaotic-paint-splatter-mental-health-concepts-generative-ai-silhouetted-280747688.jpg" width="300vw" height="210vh" class="mx-auto d-flex rounded-lg" alt="Teacher">
+                            <div class="row justify-content-center">
+                                <div class="w-75 mx-md-5 mx-1 mx-sm-2 mb-5 mt-4 px-sm-5 px-md-2 px-xl-1 px-2">
+                                    <h2 class="wlcm">Welcome to flipkart review sentiment analysis!</h1> <span class="sp1"> <span class="px-3 bg-danger rounded-pill"></span> <span class="ml-2 px-1 rounded-circle"></span> <span class="ml-2 px-1 rounded-circle"></span> </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-7 col-sm-12 col-xs-12 c2 px-5 pt-5">
+                            <div ><center>
+                                <h1 class="mb-3">FlipkartSent</h1>
+                                <p>FlipkartSent analyzes customer feedback on Flipkart, assigning sentiment labels
+                                     based on a 1-5 rating scale: <span class="llme">&lt;3 negative, =3 neutral, &gt;=4 positive.</span></p>
+                                </center>
+                            </div>
+                            <form action="/predict" method="post" name="myform" onsubmit="" class="px-1 pb-5">
+                                <div class="d-flex"> 
+                                    <h3 class="font-weight-bold">👀 Give your Review Here</h3>
+                                </div> <textarea name="userid" placeholder="Enter your Review"></textarea>
+                                     <button class="text-white text-weight-bold bt">Continue</button>
+                                <h5 class="ac" id="register" style="color: {% if prediction == 'Rating: 4 (Positive)' %}green;{% elif prediction == 'Rating: 5 (Positive)' %}green;{% elif prediction == ' Rating: 3 (Neutral)' %}blue; {% else %}red; {% endif %}">{{ prediction }}</h5>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</body>
+</html>
