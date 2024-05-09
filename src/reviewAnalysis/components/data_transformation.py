@@ -6,7 +6,7 @@ import string
 from nltk.corpus import stopwords
 from sklearn.model_selection import train_test_split
 from reviewAnalysis.entity.config_entity import DataTransformationConfig
-nltk.download('stopwords')
+#nltk.download('stopwords')
 
 
 
