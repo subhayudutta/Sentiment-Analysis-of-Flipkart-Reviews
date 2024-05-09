@@ -2,6 +2,11 @@
 
 This project aims to perform sentiment analysis on Flipkart reviews using machine learning techniques. The project involves several stages including data ingestion, data validation, data transformation, model training, model evaluation, and deployment. Additionally, it integrates MLflow for experiment tracking, DVC for version control, DAGsHub for collaborative development, and AWS EC2 for hosting with CI/CD pipeline setup.
 
+
+A live demo of the project is available [here](https://sentiment-analysis-of-flipkart-reviews.onrender.com/).
+
+![Sentiment Analysis Dashboard](static\Screenshot_2.jpg)
+
 ## Pipeline Stages:
 
 ### 1. Data Ingestion Stage:
