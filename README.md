@@ -5,7 +5,7 @@ This project aims to perform sentiment analysis on Flipkart reviews using machin
 
 A live demo of the project is available [here](https://sentiment-analysis-of-flipkart-reviews.onrender.com/).
 
-![Sentiment Analysis Dashboard](static\Screenshot_2.jpg)
+![Sentiment Analysis Dashboard](static/Screenshot_2.jpg)
 
 ## Pipeline Stages:
 

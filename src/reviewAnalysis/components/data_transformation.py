@@ -38,7 +38,7 @@ class DataTransformation:
         df = pd.read_csv(os.path.join(self.config.data_path,"flipkart.csv"))
         df = df.drop(columns=['Unnamed: 0', 'Product_name'])
 
-        #df['Review']=df['Review'].apply(self.data_cleaning)
+        df['Review']=df['Review'].apply(self.data_cleaning)
 
         df.to_csv(os.path.join(self.config.root_dir,'main_df.csv'), index=False)
 
