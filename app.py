@@ -1,6 +1,8 @@
 from flask import Flask, render_template, request, redirect, url_for
 import subprocess
 from reviewAnalysis.pipeline.prediction import PredictionPipeline
+import nltk
+nltk.download('stopwords')
 
 app = Flask(__name__)
 
