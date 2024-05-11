@@ -768,3 +768,40 @@ x==========x]
 [2024-05-09 20:08:07,867: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
 
 x==========x]
+[2024-05-11 12:21:55,176: INFO: main: >>>>>> stage Data Ingestion stage started <<<<<<]
+[2024-05-11 12:21:55,179: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-11 12:21:55,194: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-11 12:21:55,195: INFO: common: created directory at: artifacts]
+[2024-05-11 12:21:55,196: INFO: common: created directory at: artifacts/data_ingestion]
+[2024-05-11 12:21:55,196: INFO: data_ingestion: Downloading data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-11 12:21:58,507: INFO: data_ingestion: Downloaded data from https://drive.google.com/file/d/1fcbd8ZTQhpmxGSjuml_iz9NTPUkZkAaf/view?usp=sharing into file artifacts/data_ingestion/data.zip]
+[2024-05-11 12:21:58,543: INFO: main: >>>>>> stage Data Ingestion stage completed <<<<<<
+
+x==========x]
+[2024-05-11 12:21:58,543: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2024-05-11 12:21:58,546: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-11 12:21:58,553: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-11 12:21:58,554: INFO: common: created directory at: artifacts]
+[2024-05-11 12:21:58,556: INFO: common: created directory at: artifacts/data_validation]
+[2024-05-11 12:21:58,558: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2024-05-11 12:21:58,560: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2024-05-11 12:21:58,564: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-11 12:21:58,569: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-11 12:21:58,569: INFO: common: created directory at: artifacts]
+[2024-05-11 12:21:58,572: INFO: common: created directory at: artifacts/data_transformation]
+[2024-05-11 12:21:58,711: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
+[2024-05-11 12:21:58,712: INFO: main: *******************]
+[2024-05-11 12:21:58,713: INFO: main: >>>>>> stage Model Trainer stage started <<<<<<]
+[2024-05-11 12:21:58,716: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2024-05-11 12:21:58,722: INFO: common: yaml file: params.yaml loaded successfully]
+[2024-05-11 12:21:58,724: INFO: common: created directory at: artifacts]
+[2024-05-11 12:21:58,724: INFO: common: created directory at: artifacts/model_trainer]
+[2024-05-11 12:22:12,425: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-11 12:22:12,530: WARNING: saving_api: You are saving your model as an HDF5 file via `model.save()` or `keras.saving.save_model(model)`. This file format is considered legacy. We recommend using instead the native Keras format, e.g. `model.save('my_model.keras')` or `keras.saving.save_model(model, 'my_model.keras')`. ]
+[2024-05-11 12:22:12,601: INFO: main: >>>>>> stage Model Trainer stage completed <<<<<<
+
+x==========x]

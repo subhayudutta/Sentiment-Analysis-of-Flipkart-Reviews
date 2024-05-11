@@ -49,6 +49,9 @@ class ModelTrainer:
         with open(os.path.join(self.config.root_dir, 'tokenizer.pickle'), 'wb') as handle:
             pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
+        with open(os.path.join(self.config.root2_dir, 'tokenizer.pickle'), 'wb') as handle:
+            pickle.dump(tokenizer, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
         # Define model architecture
         model = Sequential()
         model.add(Embedding(max_words, 100, input_length=max_len))  

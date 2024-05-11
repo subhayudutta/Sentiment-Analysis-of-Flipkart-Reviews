@@ -39,7 +39,7 @@ class PredictionPipeline:
 
         load_model=keras.models.load_model(Path('src/reviewAnalysis/models/model.h5'))
 
-        with open(Path("artifacts/model_trainer/tokenizer.pickle"), 'rb') as handle:
+        with open(Path("src/reviewAnalysis/models/tokenizer.pickle"), 'rb') as handle:
             load_tokenizer = pickle.load(handle)
 
         seq = load_tokenizer.texts_to_sequences(test)
