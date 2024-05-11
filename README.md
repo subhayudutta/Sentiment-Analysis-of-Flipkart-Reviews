@@ -215,7 +215,7 @@ Ensure the IAM user has the following policies attached:
    newgrp docker
     ```
 
-## Configuring EC2 as a Self-hosted Runner
+### Configuring EC2 as a Self-hosted Runner
 
 1. Navigate to your GitHub repository.
 2. Go to **Settings** > **Actions** > **Runners**.
@@ -223,7 +223,7 @@ Ensure the IAM user has the following policies attached:
 4. Choose the operating system for your EC2 instance.
 5. Follow the instructions provided to download and configure the runner on your EC2 instance.
 
-## Setting up GitHub Secrets
+### Setting up GitHub Secrets
 
 To securely store sensitive information required for deployment, such as AWS credentials and repository URIs, you can use GitHub Secrets. Follow these steps to set up the necessary secrets:
 
