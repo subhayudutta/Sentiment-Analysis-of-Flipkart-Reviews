@@ -32,7 +32,7 @@ In this README, we will walk you through the folder structure, pipeline stages, 
 ## Pipeline Stages
 
 ### Data Ingestion
-Data is acquired from Kaggle (provide link to the dataset) and stored on Google Drive for easy access. To retrieve the data, we use the `gdown` library to download it from Google Drive and store it in the local environment. Subsequently, the downloaded data is saved in the artifacts folder within the data ingestion directory. We then use the `zipfile` module to unzip the downloaded file, ensuring that the data is readily available for further processing.
+Data is acquired from Kaggle (https://www.kaggle.com/datasets/harishedison/flipkart-reviews-sentiment-analysis) and stored on Google Drive for easy access. To retrieve the data, we use the `gdown` library to download it from Google Drive and store it in the local environment. Subsequently, the downloaded data is saved in the artifacts folder within the data ingestion directory. We then use the `zipfile` module to unzip the downloaded file, ensuring that the data is readily available for further processing.
 
 ### Data Validation
 In this stage, we perform thorough validation checks on the acquired data to ensure its integrity and quality. All necessary files are examined for completeness, consistency, and adherence to predefined standards. The validation process involves verifying file formats, data types, and structural integrity. The results of the validation checks are recorded in a `status.txt` file within the artifacts folder of the data validation directory. This allows for easy tracking and monitoring of the data validation process.
@@ -313,3 +313,4 @@ I would like to acknowledge the contributions of the open-source community, with
 ## Contact Me
 
 For any inquiries, feedback, or collaboration opportunities, please feel free to reach out to me via email at duttasuvo90@gmail.com.
+
