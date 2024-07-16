@@ -1,4 +1,4 @@
-# Flipkart Review Sentiment Analysis MLOps Project
+# Flipkart Review Sentiment Analysis
 
 This project focuses on sentiment analysis of Flipkart reviews using machine learning operations (MLOps) techniques. Sentiment analysis is a natural language processing task aimed at determining the sentiment expressed in a piece of text, in this case, Flipkart product reviews.
 
